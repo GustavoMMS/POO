@@ -1,0 +1,55 @@
+# Project: trabBiblioteca2.0
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Acervo.o Livro.o Periodico.o TC.o Cartaz.o Midia.o Mapa.o Relatorio.o DadosAcervo.o
+LINKOBJ  = main.o Acervo.o Livro.o Periodico.o TC.o Cartaz.o Midia.o Mapa.o Relatorio.o DadosAcervo.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = trabBiblioteca2.0.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Acervo.o: Acervo.cpp
+	$(CPP) -c Acervo.cpp -o Acervo.o $(CXXFLAGS)
+
+Livro.o: Livro.cpp
+	$(CPP) -c Livro.cpp -o Livro.o $(CXXFLAGS)
+
+Periodico.o: Periodico.cpp
+	$(CPP) -c Periodico.cpp -o Periodico.o $(CXXFLAGS)
+
+TC.o: TC.cpp
+	$(CPP) -c TC.cpp -o TC.o $(CXXFLAGS)
+
+Cartaz.o: Cartaz.cpp
+	$(CPP) -c Cartaz.cpp -o Cartaz.o $(CXXFLAGS)
+
+Midia.o: Midia.cpp
+	$(CPP) -c Midia.cpp -o Midia.o $(CXXFLAGS)
+
+Mapa.o: Mapa.cpp
+	$(CPP) -c Mapa.cpp -o Mapa.o $(CXXFLAGS)
+
+Relatorio.o: Relatorio.cpp
+	$(CPP) -c Relatorio.cpp -o Relatorio.o $(CXXFLAGS)
+
+DadosAcervo.o: DadosAcervo.cpp
+	$(CPP) -c DadosAcervo.cpp -o DadosAcervo.o $(CXXFLAGS)
